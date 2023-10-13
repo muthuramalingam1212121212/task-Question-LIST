@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    background-color: #F7F8FA;
+}
+.main-div{
+    width: 400px;
+    display: flex;
+    margin: 50px auto;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid #F5FAF9;
+    border-radius: 28px;
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - 162px);
+    background-color: #ffffff;
+    &.success{
+        align-items: center;
+        justify-content: center;
+        svg{
+            width: 80px;
+        }
+        p{
+            text-align: center;
+            margin-top: 50px;
+        }
+    }
+   
+    .span-head{
+        font-size: 14px;
+        color: #818794;
+    }
+    h2{
+        font-size: 20px;
+        color: #111111;
+    }
+    .task-outer {
+        overflow: auto;
+        height: calc(100vh - 300px);
+        .task {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          background: #F7F8FA;
+          border-radius: 6px;
+          padding: 15px;
+          margin: 10px 0;
+          justify-content: space-between;
+          overflow: hidden;
+          cursor: pointer;
+      
+          .task-inner {
+            display: flex;
+            padding-right: 10px;
+            flex-direction: row;
+            width: calc(100% - 25px);
+            .info-content {
+              display: flex;
+              flex-direction: column;
+              padding-right: 15px;
+              align-items: start;      
+              p {
+                color: #000000;
+                font-size: 12px;
+                margin: 0;
+              }
+            }
+          }
+      
+          .circle {
+            display: flex;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            background: transparent;
+            opacity: 0;
+          }
+      
+          &.active {
+            background: #F5FAF9;
+            position: relative;      
+            .circle {
+              background: #000000;
+              opacity: 1;
+              svg{
+                width: 60%;
+              }
+            }
+      
+          }
+        }
+      }
+      .pagin{
+        display: flex;    
+        justify-content: end;
+        position: absolute;
+        background: #0000001f;
+        right: 0;
+        bottom: 0;
+        padding: 10px 10px 20px 10px;
+        width: calc(100% - 20px);
+        .arrow{
+          padding: 2px 10px;
+          background: #ffffff;
+          cursor: pointer;
+          &:first-child{
+            border-radius: 5px 0 0 5px;
+            margin-right: 1px;
+          }
+          &:last-child{
+            border-radius: 0 5px 5px 0;
+          }
+        }
+      }
+  }

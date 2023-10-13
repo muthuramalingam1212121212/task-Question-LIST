@@ -1,0 +1,39 @@
+
+<div class="main-div">
+    <div *ngFor="let questionGroup of questionList">
+      <div *ngIf="step === questionGroup.questionId">
+        <span class="span-head">question {{questionGroup.questionNo}} of {{questionList.length}}</span>
+        <h2>{{ questionGroup.question }}</h2>
+        <div class="task-outer">
+          <div class="task" *ngFor="let option of questionGroup.option" (click)="onItemChange(questionGroup, option)" [class.active]="option.id == getSelectedOptionId(questionGroup)">
+            <div class="task-inner">
+              <div class="info-content">
+                <p>{{ option.name }}</p>
+              </div>
+            </div>
+            <div class="circle">
+              <svg xmlns="http://www.w3.org/2000/svg" id="check" width="24" height="24" viewBox="0 0 24 24">
+                <rect id="Rectangle_17" data-name="Rectangle 17" width="24" height="24" fill="transparent"/>
+                <path id="Path_199" data-name="Path 199" d="M222.391,527.061a1.043,1.043,0,0,0,.005-1.495,1.09,1.09,0,0,0-1.523,0l-11.418,11.145-4.911-4.791a1.09,1.09,0,0,0-1.522.005,1.043,1.043,0,0,0,0,1.495l5.67,5.531a1.09,1.09,0,0,0,1.518,0Z" transform="translate(-200.709 -520.255)" fill="#ffffff"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+    <div class="pagin">
+      <div (click)="decrementStep()" class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="5" height="10" viewBox="0 0 6.529 13.057">
+            <path id="Path_19" data-name="Path 19" d="M6.529,0V2.121L2.122,6.529l4.407,4.407v2.121L0,6.529Z" transform="translate(0 0)" fill="#03318c"/>
+          </svg>
+          
+      </div>
+      <div (click)="incrementStep()" class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="5" height="10" viewBox="0 0 5 10">
+        <path id="Path_19" data-name="Path 19" d="M0,0V1.624L3.375,5,0,8.375V10L5,5Z" transform="translate(0 0)" fill="#03318c"/>
+      </svg>
+      </div>
+    </div>
+   
+  </div>
+  
